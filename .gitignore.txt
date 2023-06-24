@@ -1,0 +1,110 @@
+# .NET / C# specific
+## Build artifacts
+obj/
+bin/
+Debug/
+Release/
+
+## Visual Studio files
+.vs/
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+*.vscode/
+
+## Visual Studio Code files
+.vscode/
+
+## NuGet packages
+packages/
+*.nupkg
+*.paket.restore.json
+project.lock.json
+project.fragment.lock.json
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## Unit test results
+TestResults/
+[Tt]est[Rr]esult*/
+[Nn]ode[Tt]est[Rr]esults/
+
+## MSTest test Results
+[Tt]est[Rr]esult*/
+
+## NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+## Build tooling
+msbuild.log
+msbuild.err
+msbuild.wrn
+msbuild.binlog
+
+## Roslyn cache directories
+*.ide/
+*.sln.ide/
+*.sln.docstates
+
+## Resharper
+_ReSharper*/
+*.ReSharper*/
+*.DotSettings.user
+*.resharper.user
+
+## Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+## StyleCop
+StyleCopReport.xml
+
+## Azure
+*.publishsettings
+*.pubxml
+*.publishproj
+
+## Rider
+.idea/
+*.sln.iml
+
+## Xamarin
+*.apk
+*.ap_
+
+## Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+
+## Flutter/Dart/Pub
+.dart_tool/
+.flutter-plugins
+.packages
+.pub-cache/
+.pub/
+/build/
+
+## Others
+TestResult.xml
+*.userprefs
+*.bak
+*.cache
+*.log
+*.swp
