@@ -1,10 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Monty_Hall_API_V3.Services;
 namespace Monty_Hall_API_V3.Startup;
 

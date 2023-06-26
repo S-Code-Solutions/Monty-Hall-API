@@ -23,7 +23,6 @@ namespace Monty_Hall_API_V3.Services
 
                 var montyOpens = validDoors.ElementAtOrDefault(random.Next(0, validDoors.Count));
 
-
                 // Player changes the door if specified
                 if (changeDoor)
                 {
@@ -31,14 +30,13 @@ namespace Monty_Hall_API_V3.Services
                         .Where(doorIndex => doorIndex != playerChoice && doorIndex != montyOpens)
                         .First();
                 }
-                
+
                 // Determine if the player won
                 var isWin = doors[playerChoice] == "Car";
 
                 Console.WriteLine($"Player Choice: {playerChoice}");
                 Console.WriteLine($"Chosen Door: {doors[playerChoice]}");
                 Console.WriteLine($"Is Win: {isWin}");
-
 
                 simulationResults[i] = new SimulationResult
                 {

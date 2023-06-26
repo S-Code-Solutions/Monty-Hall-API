@@ -1,31 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.Tracing;
 using Monty_Hall_API_V3.Models;
 using Monty_Hall_API_V3.Services;
-namespace Monty_Hall_API_V3.Controllers;
+using System;
 
-[ApiController]
-[Route("api/[controller]")]
-public class SimulationController : ControllerBase
+namespace Monty_Hall_API_V3.Controllers
 {
-    private readonly ISimulationService _simulationService;
-
-    public SimulationController(ISimulationService simulationService)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class SimulationController : ControllerBase
     {
-        _simulationService = simulationService;
-    }
+        private readonly ISimulationService _simulationService;
 
-    [HttpPost]
-    public ActionResult<SimulationResult> SimulateGames([FromBody] SimulationRequest request)
-    {
-        Console.WriteLine(request);
-        if (!ModelState.IsValid)
+        public SimulationController(ISimulationService simulationService)
         {
-            return BadRequest(ModelState);
+            _simulationService = simulationService;
         }
 
-        var simulationResults = _simulationService.SimulateGames(request.NumberOfSimulations, request.ChangeDoor);
+        [HttpPost]
+        public IActionResult SimulateGames([FromBody] SimulationRequest request)
+        {
+            Console.WriteLine(request);
 
-        return Ok(simulationResults);
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var simulationResults = _simulationService.SimulateGames(request.NumberOfSimulations, request.ChangeDoor);
+
+                return Ok(simulationResults);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it according to application's requirements
+                Console.WriteLine($"An error occurred during simulation: {ex.Message}");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
     }
 }

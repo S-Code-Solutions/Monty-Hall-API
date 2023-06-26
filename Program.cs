@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 using Monty_Hall_API_V3.Startup;
 
 public class ConsoleApp

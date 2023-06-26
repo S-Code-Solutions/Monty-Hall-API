@@ -15,7 +15,7 @@ namespace Monty_Hall_API_V3.Tests.Controllers
         [SetUp]
         public void Setup()
         {
-            _simulationService = new SimulationService(); // Replace with your implementation of ISimulationService
+            _simulationService = new SimulationService(); // Replace with implementation of ISimulationService
             _controller = new SimulationController(_simulationService);
         }
 
@@ -33,7 +33,7 @@ namespace Monty_Hall_API_V3.Tests.Controllers
             var actionResult = _controller.SimulateGames(request);
 
             // Assert
-            Assert.IsInstanceOf<OkObjectResult>(actionResult.Result);
+            Assert.IsInstanceOf<OkObjectResult>(actionResult);
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Monty_Hall_API_V3.Tests.Controllers
             var actionResult = _controller.SimulateGames(request);
 
             // Assert
-            Assert.IsInstanceOf<BadRequestObjectResult>(actionResult.Result);
+            Assert.IsInstanceOf<BadRequestResult>(actionResult);
         }
     }
 }
