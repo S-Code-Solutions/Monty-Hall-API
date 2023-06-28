@@ -34,7 +34,7 @@ namespace Monty_Hall_API_V3.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception or handle it according to application's requirements
+                // Log the exception and handle it 
                 Console.WriteLine($"An error occurred during simulation: {ex.Message}");
                 return StatusCode(500, "Internal Server Error");
             }

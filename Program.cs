@@ -11,6 +11,6 @@ public class ConsoleApp
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.UseStartup<Startup>(); // Use your Startup class here
+                webBuilder.UseStartup<Startup>(); // Startup class here
             });
 }
